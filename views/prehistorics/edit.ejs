@@ -1,0 +1,10 @@
+<h2>Edit Creature Data</h2>
+<form method="POST" action="/prehistorics/<%= creatureID%>?_method=put">
+    <label for="creatureName">Name</label>
+    <input type="text" id="creatureName" name="name" value="<%= myCreature.name %>">
+
+    <label for="creatureImage">Image (URL)</label>
+    <input type="text" id="creatureImage" name="img_url" value="<%= myCreature.img_url %>">
+
+    <input type="submit">
+</form>

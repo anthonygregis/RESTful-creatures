@@ -1,0 +1,21 @@
+<form method="GET" action="/prehistorics">
+        <label for="nameFilter">Filter By Name</label>
+        <input type="text" id="nameFilter" name="nameFilter">
+
+        <input type="submit">
+</form>
+
+<ul>
+    <% myCreatures.forEach((creature, index) => { %>
+        <li>
+             <h3><%= creature.name %></h3>
+             <a href="/prehistorics/edit/<%= index%>"><button>Edit</button></a>
+             <form method="POST" action="/prehistorics/<%= index%>?_method=DELETE">
+                 <input type="submit" value="Delete">
+             </form>
+             <img src="<%= creature.img_url %>" alt="<%= creature.name %>" width="15%" >
+
+        </li>
+
+    <% }) %>
+</ul>
